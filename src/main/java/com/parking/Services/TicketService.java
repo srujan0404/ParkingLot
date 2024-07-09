@@ -12,39 +12,36 @@ import java.util.Date;
 import java.util.Optional;
 
 public class TicketService {
-    private GateRepository gateRepository;
-    private VehicleRepository vehicleRepository;
+    private final GateRepository gateRepository;
+    private final VehicleRepository vehicleRepository;
 
-
-    public  TicketService(GateRepository gateRepository, VehicleRepository vehicleRepository){
+    public TicketService(GateRepository gateRepository, VehicleRepository vehicleRepository) {
         this.gateRepository = gateRepository;
         this.vehicleRepository = vehicleRepository;
     }
-    public Ticket generateTicket(Long gateId, String VehicleNumber, VehicleType vehicleType, String ownerName) throws InvalidException {
+
+    public Ticket generateTicket(Long gateId, String vehicleNumber, VehicleType vehicleType, String ownerName)
+            throws InvalidException {
         Ticket ticket = new Ticket();
         ticket.setEntryTime(new Date());
-        Optional<Gates> optionalGate = gateRepository.findById(gateId);
-        if(optionalGate.isEmpty()){
-            throw new InvalidException("Invalid Gate Id");
-        }
 
-        Gates gate = optionalGate.get();
-        ticket.setGenratedAt(gate);
-        ticket.setGenratedBy(gate.getOperator());
+        Gates gate = gateRepository.findById(gateId)
+                .orElseThrow(() -> new InvalidException("Invalid Gate Id"));
 
-        Optional<Vehicle> optionalVehicle = vehicleRepository.findByNumber(VehicleNumber);
-        Vehicle vehicle ;
-        if(optionalVehicle.isPresent()){
-            vehicle = optionalVehicle.get();
-        }
-        else{
-            vehicle = new Vehicle();
-            vehicle.setOwnerName(ownerName);
-            vehicle.setVehiclenumber(VehicleNumber);
-            vehicle.setVehicleType(vehicleType);
-            vehicleRepository.save(vehicle);
-            ticket.setVehicle(vehicle);
-        }
+        ticket.setGeneratedAt(gate);
+        ticket.setGeneratedBy(gate.getOperator());
+
+        Vehicle vehicle = vehicleRepository.findByNumber(vehicleNumber)
+                .orElseGet(() -> {
+                    Vehicle newVehicle = new Vehicle();
+                    newVehicle.setOwnerName(ownerName);
+                    newVehicle.setVehicleNumber(vehicleNumber);
+                    newVehicle.setVehicleType(vehicleType);
+                    vehicleRepository.save(newVehicle);
+                    return newVehicle;
+                });
+
+        ticket.setVehicle(vehicle);
         return ticket;
     }
 }
