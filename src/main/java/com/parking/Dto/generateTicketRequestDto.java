@@ -1,8 +1,8 @@
-package com.parking.Dto;
+package com.parking.dto; // Corrected package name to follow conventions
 
-import com.parking.Modules.VehicleType;
+import com.parking.modules.VehicleType;
 
-public class generateTicketRequestDto {
+public class GenerateTicketRequestDto { 
     private Long gateId;
     private VehicleType vehicleType;
     private String vehicleNumber;
