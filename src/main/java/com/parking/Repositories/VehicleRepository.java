@@ -1,6 +1,6 @@
-package com.parking.repositories; 
+package com.parking.Repositories;
 
-import com.parking.modules.Vehicle;
+import com.parking.Modules.Vehicle;
 
 import java.util.HashMap;
 import java.util.Map;

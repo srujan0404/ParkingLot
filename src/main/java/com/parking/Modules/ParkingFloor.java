@@ -2,7 +2,7 @@ package com.parking.Modules;
 
 import java.util.List;
 
-public class ParkingFloor  extends BaseModel{
+public class ParkingFloor  extends BaseModel {
     public int getFloorNumber() {
         return floorNumber;
     }
@@ -26,12 +26,12 @@ public class ParkingFloor  extends BaseModel{
     private Status status;
 
     public ParkingFloorStatus getParkingFloorStatus() {
-        return ParkingFloorStatus;
+        return parkingFloorStatus;
     }
 
     public void setParkingFloorStatus(ParkingFloorStatus parkingFloorStatus) {
-        ParkingFloorStatus = parkingFloorStatus;
+        this.parkingFloorStatus = parkingFloorStatus;
     }
 
-    private ParkingFloorStatus ParkingFloorStatus;
+    private ParkingFloorStatus parkingFloorStatus;
 }

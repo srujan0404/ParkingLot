@@ -1,6 +1,6 @@
 package com.parking.Modules;
 
-public class Gates extends BaseModel{
+public class Gates extends BaseModel {
     public int getGateNumber() {
         return gateNumber;
     }

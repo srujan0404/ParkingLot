@@ -1,13 +1,10 @@
 package com.parking.Modules;
 
-import java.sql.Time;
+import java.util.Date;
 
 public class Payment extends BaseModel {
     private PaymentMode paymentMode;
     private double amount;
-    private Time paymentTime;
-    private int transactionId;
-    private int amount;
     private Date paymentTime;
     private String transactionId;
     private PaymentStatus status;
@@ -20,11 +17,11 @@ public class Payment extends BaseModel {
         this.paymentMode = paymentMode;
     }
 
-    public int getAmount() {
+    public double getAmount() {
         return amount;
     }
 
-    public void setAmount(int amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 

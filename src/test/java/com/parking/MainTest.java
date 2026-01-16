@@ -8,9 +8,7 @@ import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Basic smoke test for Main class
- */
+
 @DisplayName("Main Application Tests")
 class MainTest {
 
@@ -34,7 +32,6 @@ class MainTest {
     @Test
     @DisplayName("Main class should not be null")
     void testMainClassExists() {
-        // Assert
         assertNotNull(Main.class, "Main class should exist");
     }
 }

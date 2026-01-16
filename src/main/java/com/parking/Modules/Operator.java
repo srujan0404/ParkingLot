@@ -1,6 +1,6 @@
 package com.parking.Modules;
 
-public class Operator extends BaseModel{
+public class Operator extends BaseModel {
     private int employeeId;
     private int operatorNumber;
     private String name;

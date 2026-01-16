@@ -1,16 +1,16 @@
 package com.parking.Modules;
 
-import java.sql.Date;
-import java.sql.Time;
+import java.util.Date;
+
 public class Ticket extends BaseModel {
-    private  String number;
+    private String number;
     private Vehicle vehicle;
     private Date entryTime;
     private ParkingSpots parkingSpot;
     private Gates gate;
     private Status status;
-    private Gates genratedAt;
-    private Operator genratedBy;
+    private Gates generatedAt;
+    private Operator generatedBy;
 
     public String getNumber() {
         return number;
@@ -44,19 +44,35 @@ public class Ticket extends BaseModel {
         this.parkingSpot = parkingSpot;
     }
 
-    public Gates getGenratedAt() {
-        return genratedAt;
+    public Gates getGate() {
+        return gate;
     }
 
-    public void setGenratedAt(Gates genratedAt) {
-        this.genratedAt = genratedAt;
+    public void setGate(Gates gate) {
+        this.gate = gate;
     }
 
-    public Operator getGenratedBy() {
-        return genratedBy;
+    public Status getStatus() {
+        return status;
     }
 
-    public void setGenratedBy(Operator genratedBy) {
-        this.genratedBy = genratedBy;
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public Gates getGeneratedAt() {
+        return generatedAt;
+    }
+
+    public void setGeneratedAt(Gates generatedAt) {
+        this.generatedAt = generatedAt;
+    }
+
+    public Operator getGeneratedBy() {
+        return generatedBy;
+    }
+
+    public void setGeneratedBy(Operator generatedBy) {
+        this.generatedBy = generatedBy;
     }
 }

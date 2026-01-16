@@ -1,15 +1,14 @@
-package com.parking.services; 
+package com.parking.Services;
 
-import com.parking.exceptions.InvalidException;
-import com.parking.modules.Gates;
-import com.parking.modules.Ticket;
-import com.parking.modules.Vehicle;
-import com.parking.modules.VehicleType;
-import com.parking.repositories.GateRepository;
-import com.parking.repositories.VehicleRepository;
+import com.parking.Exceptions.InvalidException;
+import com.parking.Modules.Gates;
+import com.parking.Modules.Ticket;
+import com.parking.Modules.Vehicle;
+import com.parking.Modules.VehicleType;
+import com.parking.Repositories.GateRepository;
+import com.parking.Repositories.VehicleRepository;
 
 import java.util.Date;
-import java.util.Optional;
 
 public class TicketService {
     private final GateRepository gateRepository;

@@ -2,12 +2,10 @@ package com.parking.Modules;
 
 import java.util.List;
 
-public class Parkinglot  extends BaseModel{
+public class Parkinglot extends BaseModel {
     private List<ParkingFloor> parkingFloors;
     private List<Gates> gates;
-    private Status status;
     private List<VehicleType> vehicleTypes;
-    private ParkingFloorStatus status;
     private ParkingLotStatus parkingLotStatus;
 
     public List<ParkingFloor> getParkingFloors() {
@@ -32,14 +30,6 @@ public class Parkinglot  extends BaseModel{
 
     public void setVehicleTypes(List<VehicleType> vehicleTypes) {
         this.vehicleTypes = vehicleTypes;
-    }
-
-    public ParkingFloorStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(ParkingFloorStatus status) {
-        this.status = status;
     }
 
     public ParkingLotStatus getParkingLotStatus() {

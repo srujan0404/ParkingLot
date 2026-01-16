@@ -1,19 +1,25 @@
 package com.parking.Modules;
-public class Vehicle  extends BaseModel{
-    public String getVehiclenumber() {
-        return Vehiclenumber;
+
+public class Vehicle extends BaseModel {
+    private String vehicleNumber;
+    private String ownerName;
+    private VehicleType vehicleType;
+    private User owner;
+
+    public String getVehicleNumber() {
+        return vehicleNumber;
     }
 
-    public void setVehiclenumber(String vehiclenumber) {
-        this.Vehiclenumber = vehiclenumber;
+    public void setVehicleNumber(String vehicleNumber) {
+        this.vehicleNumber = vehicleNumber;
     }
 
     public String getOwnerName() {
-        return OwnerName;
+        return ownerName;
     }
 
     public void setOwnerName(String ownerName) {
-        OwnerName = ownerName;
+        this.ownerName = ownerName;
     }
 
     public VehicleType getVehicleType() {
@@ -25,17 +31,10 @@ public class Vehicle  extends BaseModel{
     }
 
     public User getOwner() {
-        return Owner;
+        return owner;
     }
 
     public void setOwner(User owner) {
-        Owner = owner;
+        this.owner = owner;
     }
-
-    private String Vehiclenumber;
-    private String OwnerName;
-
-
-    private VehicleType vehicleType;
-    private User Owner;
 }

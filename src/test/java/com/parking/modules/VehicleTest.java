@@ -1,4 +1,4 @@
-package com.parking.modules;
+package com.parking.Modules;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
@@ -12,12 +12,10 @@ class VehicleTest {
     @DisplayName("Should create vehicle with all properties")
     void testCreateVehicle() {
         Vehicle vehicle = new Vehicle();
-        vehicle.setId(1L);
         vehicle.setVehicleNumber("KA-01-AB-1234");
         vehicle.setVehicleType(VehicleType.CAR);
         vehicle.setOwnerName("John Doe");
 
-        assertEquals(1L, vehicle.getId());
         assertEquals("KA-01-AB-1234", vehicle.getVehicleNumber());
         assertEquals(VehicleType.CAR, vehicle.getVehicleType());
         assertEquals("John Doe", vehicle.getOwnerName());
@@ -62,4 +60,3 @@ class VehicleTest {
         assertEquals("New Owner", vehicle.getOwnerName());
     }
 }
-

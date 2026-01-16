@@ -1,10 +1,10 @@
 package com.parking.Controllers;
 
-import com.parking.Dto.generateTicketRequestDto;
-import com.parking.Dto.generateTicketResponseDto;
+import com.parking.Dto.GenerateTicketRequestDto;
+import com.parking.Dto.GenerateTicketResponseDto;
 
 public class TicketController {
-    public generateTicketResponseDto generateTicket(generateTicketRequestDto request) {
+    public GenerateTicketResponseDto generateTicket(GenerateTicketRequestDto request) {
         return null;
     }
 }

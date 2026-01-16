@@ -2,7 +2,12 @@ package com.parking.Modules;
 
 import java.util.List;
 
-public class ParkingSpots extends BaseModel{
+public class ParkingSpots extends BaseModel {
+    private int spotNumber;
+    private List<VehicleType> supportedVehicleTypes;
+    private ParkingSpotStatus parkingSpotStatus;
+    private ParkingFloor parkingFloor;
+
     public int getSpotNumber() {
         return spotNumber;
     }
@@ -19,20 +24,12 @@ public class ParkingSpots extends BaseModel{
         this.supportedVehicleTypes = supportedVehicleTypes;
     }
 
-    public ParkingFloorStatus getStatus() {
-        return status;
+    public ParkingSpotStatus getParkingSpotStatus() {
+        return parkingSpotStatus;
     }
 
-    public void setStatus(ParkingFloorStatus status) {
-        this.status = status;
-    }
-
-    public ParkingLotStatus getParkingLotStatus() {
-        return parkingLotStatus;
-    }
-
-    public void setParkingLotStatus(ParkingLotStatus parkingLotStatus) {
-        this.parkingLotStatus = parkingLotStatus;
+    public void setParkingSpotStatus(ParkingSpotStatus parkingSpotStatus) {
+        this.parkingSpotStatus = parkingSpotStatus;
     }
 
     public ParkingFloor getParkingFloor() {
@@ -42,13 +39,4 @@ public class ParkingSpots extends BaseModel{
     public void setParkingFloor(ParkingFloor parkingFloor) {
         this.parkingFloor = parkingFloor;
     }
-
-    private int spotNumber;
-    private Status status;
-    private List<VehicleType> supportedVehicleTypes;
-    private ParkingFloorStatus status;
-    private ParkingLotStatus parkingLotStatus;
-    private ParkingSpotStatus parkingSpotStatus;
-    private ParkingFloor parkingFloor;
-
 }

@@ -1,15 +1,15 @@
-package com.parking.repositories;
+package com.parking.Repositories;
 
-import com.parking.modules.Gate;
+import com.parking.Modules.Gates;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
 public class GateRepository {
-    private Map<Long, Gate> gateMap = new HashMap<>();
+    private Map<Long, Gates> gateMap = new HashMap<>();
 
-    public Optional<Gate> findById(Long gateId) {
+    public Optional<Gates> findById(Long gateId) {
         if (gateId == null) {
             throw new IllegalArgumentException("Gate ID must not be null");
         }
