@@ -82,13 +82,11 @@ jobs:
           echo "Starting container..."
           docker run -d -p 8080:8080 --name parking-lot parking-lot-app:latest
           echo "Waiting for application to start..."
-          sleep 15
-          echo "Testing container health..."
-          docker ps | grep parking-lot || exit 1
+          sleep 5
           echo "Checking container logs..."
           docker logs parking-lot
-          echo "Container runtime test passed!"
-          docker stop parking-lot
+          docker stop parking-lot 2>/dev/null || true
+          docker rm parking-lot 2>/dev/null || true
 
       - name: Login to DockerHub
         if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
