@@ -11,6 +11,11 @@ jobs:
   build:
     name: Build and Security Scan
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
+      security-events: write
+      actions: read
 
     steps:
       - name: Checkout source code
@@ -48,7 +53,7 @@ jobs:
 
       - name: Upload Trivy SCA results to GitHub Security
         uses: github/codeql-action/upload-sarif@v3
-        if: always()
+        if: always() && hashFiles('trivy-fs-results.sarif') != ''
         with:
           sarif_file: 'trivy-fs-results.sarif'
           category: 'dependency-scan'
@@ -67,7 +72,7 @@ jobs:
 
       - name: Upload Trivy Image scan results to GitHub Security
         uses: github/codeql-action/upload-sarif@v3
-        if: always()
+        if: always() && hashFiles('trivy-image-results.sarif') != ''
         with:
           sarif_file: 'trivy-image-results.sarif'
           category: 'container-scan'
