@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: parking-lot-service
+  namespace: parking-lot
+  labels:
+    app: parking-lot
+spec:
+  type: LoadBalancer
+  selector:
+    app: parking-lot
+  ports:
+  - port: 80
+    targetPort: 8080
+    protocol: TCP
+    name: http
+  sessionAffinity: ClientIP
+

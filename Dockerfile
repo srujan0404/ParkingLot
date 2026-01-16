@@ -11,13 +11,13 @@ COPY checkstyle.xml .
 
 RUN mvn clean package -DskipTests -B
 
-FROM eclipse-temurin:20-jre-alpine
+FROM eclipse-temurin:20-jre
 
 LABEL maintainer="ParkingLot DevOps Team"
 LABEL description="ParkingLot Management System"
 LABEL version="1.0"
 
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+RUN groupadd -r appgroup && useradd -r -g appgroup appuser
 
 WORKDIR /app
 

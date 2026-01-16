@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: parking-lot
+  labels:
+    name: parking-lot
+    environment: production
+

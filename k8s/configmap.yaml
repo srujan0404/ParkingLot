@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: parking-lot-config
+  namespace: parking-lot
+data:
+  application.properties: |
+    app.name=ParkingLot Management System
+    app.version=1.0.0
+    app.environment=production
+
