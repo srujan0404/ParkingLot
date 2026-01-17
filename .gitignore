@@ -84,3 +84,4 @@ docker-compose.override.yml
 
 # Dependency check
 dependency-check-report.html
+actions-runner/
